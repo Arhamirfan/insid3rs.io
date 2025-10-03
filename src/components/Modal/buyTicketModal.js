@@ -5,7 +5,7 @@ import Snap from "../../../public/assets/images/icons/snap.png";
 import Web3 from 'web3';
 import AppApi from "../../api/app";
 let BuyTicketModal = (props) => {
-  let [loader, setLoader] = useState(true);
+  let [loader, setLoader] = useState(false);
   let [dropSiteStatusValue, setDropSiteStatus] = useState(false);
   let [eventPaused, setEventPaused] = useState(false);
   let account = ""
