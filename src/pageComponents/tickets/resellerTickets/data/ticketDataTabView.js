@@ -30,7 +30,7 @@ let TimeCountDown = dynamic(() => import('../../components/timeCountDown'), {
 
 let TicketDataTabView = ({ ticketData, getTicketsById }) => {
   let router = useRouter();
-  let [dropSiteStatusValue, setDropSiteStatus] = useState(false);
+  let [dropSiteStatusValue, setDropSiteStatus] = useState(true);
   let minBidAmount = useSelector(state => state.auctions.minBidAmount);
   let auctions = useSelector(state => state.auctions.list);
   let wallet = useSelector(state => state.wallet.address);
@@ -73,7 +73,7 @@ let TicketDataTabView = ({ ticketData, getTicketsById }) => {
 
   let CheckStatus = async () => {
     let result = await dropSiteStatus();
-    setDropSiteStatus(!result)
+    // setDropSiteStatus(!result)
   }
   let contractConnection = async () => {
     try {

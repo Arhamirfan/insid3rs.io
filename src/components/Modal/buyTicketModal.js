@@ -6,7 +6,7 @@ import Web3 from 'web3';
 import AppApi from "../../api/app";
 let BuyTicketModal = (props) => {
   let [loader, setLoader] = useState(false);
-  let [dropSiteStatusValue, setDropSiteStatus] = useState(false);
+  let [dropSiteStatusValue, setDropSiteStatus] = useState(true);
   let [eventPaused, setEventPaused] = useState(false);
   let account = ""
   let web3 = ""
@@ -19,7 +19,7 @@ let BuyTicketModal = (props) => {
   let CheckStatus = async () => {
     let result = await dropSiteStatus();
     console.log("dropSite status:", result)
-    setDropSiteStatus(!result)
+    // setDropSiteStatus(!result)
     setLoader(false)
   }
 

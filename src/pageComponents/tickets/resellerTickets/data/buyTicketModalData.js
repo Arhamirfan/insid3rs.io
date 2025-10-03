@@ -214,7 +214,7 @@ let BuyTicketModalData = ({ data }) => {
                                 </div>
                                 <div className="d-flex  justify-content-between greyColor">
                                   <small>Service fee  </small>
-                                  <small>${(values.totalTickets * ((data?.event_id?.transactionFee / 100) * data?.stripeAmount)).toFixed(2)}</small>
+                                  <small>${(values.totalTickets * ((5 / 100) * data?.stripeAmount)).toFixed(2)}</small>
                                 </div>
                               </div>
                             </div>
@@ -369,7 +369,7 @@ let BuyTicketModalData = ({ data }) => {
                             </div>
                             <div className="d-flex  justify-content-between greyColor">
                               <small>Service fee  </small>
-                              <small>${(values.totalTickets * ((data?.event_id?.transactionFee / 100) * data?.fixPrice)).toFixed(2)}</small>
+                              <small>${(values.totalTickets * ((5 / 100) * data?.fixPrice)).toFixed(2)}</small>
                             </div>
                           </div>
                         </div>

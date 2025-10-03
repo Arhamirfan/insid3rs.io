@@ -140,7 +140,7 @@ let BuyTicketModalData = ({ data }) => {
     );
     let promoCodeName = ((discountResponse?.data?.matic || discountResponse?.data?.matic > 0) && discountResponse?.coupon != '' && !discountResponse?.error) ? discountResponse?.coupon : ''
     let promoCodeValue = ((discountResponse?.data?.matic || discountResponse?.data?.matic > 0) && discountResponse?.coupon != '' && !discountResponse?.error) ? discountResponse?.data?.matic : 0
-    let serviceFee = parseFloat((values.totalTickets * ((data?.event_id?.transactionFee / 100) * data?.fixPrice)).toFixed(5))
+    let serviceFee = parseFloat((values.totalTickets * ((5 / 100) * data?.fixPrice)).toFixed(5))
     let ticketPrice = parseFloat(((values.totalTickets * data.fixPrice) - promoCodeValue).toFixed(5));
     let objects = {
       price: ticketPrice > 0 ? ticketPrice : 0,
@@ -391,7 +391,7 @@ let BuyTicketModalData = ({ data }) => {
                               </div>
                               <div className="d-flex  justify-content-between ">
                                 <small>Service fee  </small>
-                                <small>${(values.totalTickets * ((data?.event_id?.transactionFee / 100) * data?.stripeAmount)).toFixed(2)}</small>
+                                <small>${(values.totalTickets * ((5 / 100) * data?.stripeAmount)).toFixed(2)}</small>
                               </div>
                               <div className="d-flex  justify-content-between pt-1">
                                 <p>
@@ -400,7 +400,7 @@ let BuyTicketModalData = ({ data }) => {
                                 {discountResponse && !discountResponse?.error ? <>
                                   <p>${((values.totalTickets * data.stripeAmount) - (discountResponse?.data?.usd) + (data.stripeAmount !== discountResponse.data?.usd ? parseFloat(values.totalTickets * 0.03 * data?.stripeAmount) : 0)).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 4 })} </p>
                                 </> : <>
-                                  <p>${((values.totalTickets * data.stripeAmount) + parseFloat(values.totalTickets * data?.stripeAmount * 0.03) + parseFloat((values.totalTickets * ((data?.event_id?.transactionFee / 100) * data?.stripeAmount)).toFixed(2))).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} </p>
+                                  <p>${((values.totalTickets * data.stripeAmount) + parseFloat(values.totalTickets * data?.stripeAmount * 0.03) + parseFloat((values.totalTickets * ((5 / 100) * data?.stripeAmount)).toFixed(2))).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} </p>
                                 </>}
                               </div>
                             </div>
@@ -506,7 +506,7 @@ let BuyTicketModalData = ({ data }) => {
                         <div className="px-sm-3 text-white payment-details">
                           <div className="d-flex  justify-content-between text-white">
                             <small>Service fee  </small>
-                            <small>{(values.totalTickets * ((data?.event_id?.transactionFee / 100) * data?.fixPrice)).toFixed(5)} MATIC</small>
+                            <small>{(values.totalTickets * ((5 / 100) * data?.fixPrice)).toFixed(5)} MATIC</small>
                           </div>
 
                           {!discountResponse?.error ? <>
